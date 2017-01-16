@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;OperatorOverloading&apos;" deleteContents="true" description="Delete resource &apos;OperatorOverloading&apos;" element1="/OperatorOverloading" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1472053968680"/>&#x0A;<refactoring comment="Delete resource &apos;Overloading&apos;" deleteContents="true" description="Delete resource &apos;Overloading&apos;" element1="/Overloading" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1472054495065"/>
+</session>

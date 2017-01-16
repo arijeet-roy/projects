@@ -1,0 +1,23 @@
+package com.hackerrank.cipher;
+
+import java.math.BigInteger;
+import java.util.Scanner;
+
+public class Solution {
+
+	public Solution() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scanner = new Scanner(System.in);
+		int n = scanner.nextInt();
+		int k = scanner.nextInt();
+		scanner.nextLine();
+		String input = scanner.nextLine();
+		BigInteger input = new BigInteger(val)
+
+	}
+
+}

@@ -1,0 +1,21 @@
+/*
+ * BinaryIO.cpp
+ *
+ *  Created on: Nov 7, 2016
+ *      Author: DrunkenRex1107
+ */
+
+#include "BinaryIO.h"
+
+namespace std {
+
+BinaryIO::BinaryIO() {
+	// TODO Auto-generated constructor stub
+
+}
+
+BinaryIO::~BinaryIO() {
+	// TODO Auto-generated destructor stub
+}
+
+} /* namespace std */

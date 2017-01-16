@@ -1,0 +1,6 @@
+16:50:06 **** Clean-only build of configuration Default for project PrimeCheck ****
+make clean 
+rm -f PrimeCheck.o PrimeCheck
+
+16:50:07 Build Finished (took 92ms)
+

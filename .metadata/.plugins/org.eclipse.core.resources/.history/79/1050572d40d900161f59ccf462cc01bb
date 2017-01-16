@@ -1,0 +1,62 @@
+package com.algos.practice;
+
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Set;
+
+public class MinDnaDistance {
+
+	public MinDnaDistance() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String start = "AAAAACCC";
+		String end = "AACCCCCC";
+		String data[] = new String[]{"AAAACCCC", "AAACCCCC", "AACCCCCC"};
+		
+		System.out.println(findMutationDistance(start, end, data));
+	}
+
+	private static int findMutationDistance(String start, String end, String[] data) {
+		// TODO Auto-generated method stub
+		if(start.equals(end)) return 0;
+		char []dnaChars = new char[]{'A', 'C', 'G', 'T'};
+		//Using Hashset so as to allow no duplicates of a string.
+		Set<String> dataSet = new HashSet<>();
+		//using a queue for doing a bfs of the data set based on character change
+		Queue<String> bfsQueue = new LinkedList<>();
+		for (String dataWord : data) {
+			dataSet.add(dataWord);
+		}
+		bfsQueue.offer(start);
+		int count = 0;
+		while(!bfsQueue.isEmpty()) {
+			int size = bfsQueue.size();
+			String word = bfsQueue.poll();
+			while(size > 0) {
+				if(word.equals(end)) return count;
+				char wordArr[] = word.toCharArray();
+				
+				for(int i=0; i<word.length(); i++) {
+					char wordChar = wordArr[i];
+					for (char ch : dnaChars) {
+						if(ch == wordArr[i]) continue;
+						wordArr[i] = ch;
+						String newWord = new String(wordArr);
+						if(dataSet.contains(newWord)) {
+							bfsQueue.add(newWord);
+						}
+					}
+					wordArr[i] = wordChar;
+				}
+				size--;
+			}
+			count++;
+		}
+		return -1;
+	}
+
+}

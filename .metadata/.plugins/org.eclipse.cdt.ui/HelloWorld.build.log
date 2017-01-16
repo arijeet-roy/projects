@@ -1,0 +1,6 @@
+16:50:06 **** Clean-only build of configuration Default for project HelloWorld ****
+make clean 
+rm -f HelloWorld.o HelloWorld
+
+16:50:06 Build Finished (took 88ms)
+

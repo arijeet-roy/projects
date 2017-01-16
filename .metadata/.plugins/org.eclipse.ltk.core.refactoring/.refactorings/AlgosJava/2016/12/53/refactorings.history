@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.hackerrank.lis&apos; to &apos;com.hackerrank.liswithsequence&apos;&#x0A;- Original project: &apos;AlgosJava&apos;&#x0A;- Original element: &apos;AlgosJava/src/com.hackerrank.lis&apos;&#x0A;- Renamed element: &apos;AlgosJava/src/com.hackerrank.liswithsequence&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings&#x0A;- Rename subpackages of the package" description="Rename package &apos;com.hackerrank.lis&apos;" flags="589830" hierarchical="true" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;com.hackerrank.lis" name="com.hackerrank.liswithsequence" qualified="false" references="true" stamp="1482961328348" textual="false" version="1.0"/>
+</session>

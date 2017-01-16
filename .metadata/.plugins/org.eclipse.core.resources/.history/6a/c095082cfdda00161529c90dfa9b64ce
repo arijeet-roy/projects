@@ -1,0 +1,65 @@
+package com.amazon.test;
+
+public class Solution {
+
+	public Solution() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	
+	public static ListNode reverse(ListNode start)
+    {   
+        int counter = 0;
+        ListNode node = start;
+        ListNode pre = start;
+
+        ListNode result = start;
+
+        while (node!= null)
+        {
+            counter += 1;
+            node = node.next;           
+        }
+
+        int end = counter % 2 == 0 ? counter / 2 : (counter- 1) / 2 ;
+
+        for (int i=0; i< end ; i++)
+        {   
+            pre = start;
+            start = start.next; 
+        }
+
+
+        ListNode tlist = null,temp ;
+
+        while(start != null){
+            temp = start.next;
+
+            if(tlist == null){
+            tlist = start;
+            start.next = null;
+            }else{
+            start.next = tlist;
+
+            tlist = start;
+            }
+
+            start = temp;
+
+        }
+
+        pre.next = tlist;
+
+        return start;
+
+    }
+	class ListNode {
+		public int value;
+		public ListNode next;
+	}
+
+}

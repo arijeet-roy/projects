@@ -1,0 +1,129 @@
+package com.algos.practice;
+
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+import java.util.Set;
+
+public class MinDnaDistance {
+
+	public MinDnaDistance() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String start = "AAAAACCC";
+		String end = "AACCCCCC";
+		String data[] = new String[] {"AAAACCCC", "AAACCCCC", "AACCCCCC"};
+
+//		Scanner scanner = new Scanner(System.in);
+//		String start = scanner.nextLine();
+//		String end = scanner.nextLine();
+//		int numOfCases = scanner.nextInt();
+//		String data[] = new String[numOfCases];
+//		scanner.nextLine();
+//		for (int i = 0; i < data.length; i++) {
+//			data[i] = scanner.nextLine();
+//		}
+//		scanner.close();
+		System.out.println(findMutationDistanceOptimized(start, end, data));
+	}
+
+	private static int findMutationDistanceOptimized(String start, String end, String[] data) {
+		// TODO Auto-generated method stub
+		if(start.equals(end)) return 0;
+		if(start.length() != end.length()) return -1;
+		Set<String> visited = new HashSet<>();
+		int minDistance = Integer.MAX_VALUE;
+		
+		for(String word : data) {
+			if(distance(start, word) != 1) continue;
+			visited.add(word);
+			minDistance = Math.min(minDistance, findDistance(word, end, visited, data, 1));
+			
+		}
+		
+		if(minDistance == Integer.MAX_VALUE) return -1;
+		return minDistance;
+	}
+
+	private static int findDistance(String s, String end, Set<String> visited, String[] data, int level) {
+		// TODO Auto-generated method stub
+		if(s.equals(end)) return level;
+		if(s.length() != end.length()) return -1;
+		if(level >= data.length) return -1;
+		int min = Integer.MAX_VALUE;
+		for (String word : data) {
+			if(visited.contains(word) || distance(s, word) != 1) continue;
+			visited.add(word);
+			min = Math.min(min, findDistance(word, end, visited, data, level++));
+			visited.remove(word);
+		}
+		return min;
+	}
+
+	private static int distance(String start, String end) {
+		// TODO Auto-generated method stub
+		int distance = 0;
+		if(start.length() == 0 || end.length() == 0 || start.length() != end.length()) return Integer.MAX_VALUE;
+		for(int i=0; i<start.length(); i++) {
+			if(start.charAt(i) != end.charAt(i)) distance++;
+		}
+		
+		return distance;
+	}
+
+	
+	/*
+	private static int findMutationDistance(String start, String end, String[] bank) {
+		// TODO Auto-generated method stub
+		if (start.equals(end))
+			return 0;
+		char[] dnaChars = new char[] { 'A', 'C', 'G', 'T' };
+		// Using Hashset so as to allow no duplicates of a string.
+		Set<String> dataSet = new HashSet<>();
+		// using a queue for doing a bfs of the data set based on a single character
+		// change
+		Queue<String> bfsQueue = new LinkedList<>();
+		for (String dataWord : bank) {
+			dataSet.add(dataWord);
+		}
+		bfsQueue.offer(start);
+		//count represents the mutation distance.
+		int count = 0;
+		while (!bfsQueue.isEmpty()) {
+			int size = bfsQueue.size();
+			while (size > 0) {
+				String word = bfsQueue.poll();
+				//when word is equal to the end string means we have found a path with count as the number of mutations.
+				if (word.equals(end))
+					return count;
+				char wordArr[] = word.toCharArray();
+
+				//change every character and see if the word formed after changing exactly ONE alphabet exists in the data bank of words
+				for (int i = 0; i < word.length(); i++) {
+					char wordChar = wordArr[i];
+					for (char ch : dnaChars) {
+						if (ch == wordArr[i])
+							continue;
+						wordArr[i] = ch;
+						String newWord = new String(wordArr);
+						//if exists then enqueue
+						if (dataSet.contains(newWord)) {
+							bfsQueue.offer(newWord);
+						}
+					}
+					wordArr[i] = wordChar;
+				}
+				size--;
+			}
+			count++;
+		}
+		return -1;
+	}
+	*/
+	
+
+}

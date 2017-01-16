@@ -1,0 +1,28 @@
+22:40:44 **** Build of configuration Default for project BinaryIO ****
+make all 
+
+
+Agreeing to the Xcode/iOS license requires admin privileges, please re-run as root via sudo.
+
+
+16:50:04 **** Clean-only build of configuration Default for project Arrays ****
+make clean 
+rm -f Arrays.o Arrays
+16:50:06 **** Clean-only build of configuration Default for project BinaryIO ****
+make clean 
+rm -f BinaryIO.o BinaryIO
+16:50:06 **** Clean-only build of configuration Default for project CircularArray ****
+make clean 
+rm -f CircularArray.o CircularArray
+16:50:06 **** Clean-only build of configuration Default for project HelloWorld ****
+make clean 
+rm -f HelloWorld.o HelloWorld
+16:50:06 **** Clean-only build of configuration Default for project Overloading ****
+make clean 
+rm -f Overloading.o Overloading
+16:50:06 **** Clean-only build of configuration Default for project PrimeCheck ****
+make clean 
+rm -f PrimeCheck.o PrimeCheck
+16:50:07 **** Clean-only build of configuration Default for project StackAsList ****
+make clean 
+rm -f StackAsList.o StackAsList
